@@ -1,0 +1,8 @@
+@use '../abstracts/' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: $font-family;
+}
