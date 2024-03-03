@@ -6,7 +6,7 @@ export const useFetchData = <T>(pageType: string) => {
   const location = useLocation();
 
   const fetchData = async () => {
-    const response = await axiosInstance.get<T>(location.search);
+    const response = await axiosInstance.get<T>(location.pathname);
 
     return response.data;
   };
