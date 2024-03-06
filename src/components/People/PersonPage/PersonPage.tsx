@@ -2,30 +2,40 @@ import React from 'react';
 import { useFetchData } from '../../../hooks/useFetchData';
 import { Person } from '../../../types/Person';
 import { useLocation } from 'react-router-dom';
+import { RelatedLinks } from '../../RelatedLinks/RelatedLinks';
+import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
 
 export const PersonPage = () => {
   const { pathname } = useLocation();
-  const { data, isLoading, error, refetch } = useFetchData<Person>(pathname);
+  const { data, isLoading, isError, refetch } = useFetchData<Person>(pathname);
 
-  if (error) {
-    return (
-      <div>
-        Error
-        <button
-          onClick={() => {
-            refetch();
-          }}
-          type="button"
-        >
-          Try again
-        </button>
-      </div>
-    );
-  }
+  return (
+    <>
+      {isError && (
+        <div>
+          Error
+          <button
+            onClick={() => {
+              refetch();
+            }}
+            type="button"
+          >
+            Try again
+          </button>
+        </div>
+      )}
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+      {isLoading ? <div>Loading...</div> : <div>Name: {data?.name}</div>}
 
-  return <div>Name: {data?.name}</div>;
+      <RelatedLinks urls={data?.films} linkType={RelatedLinksOptions.Film} />
+      <RelatedLinks
+        urls={data?.vehicles}
+        linkType={RelatedLinksOptions.Vehicles}
+      />
+      <RelatedLinks
+        urls={data?.starships}
+        linkType={RelatedLinksOptions.Starships}
+      />
+    </>
+  );
 };

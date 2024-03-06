@@ -3,16 +3,15 @@ import { axiosInstance } from '../api/axiosSetup';
 
 export const useFetchData = <T>(pagePath: string) => {
   const fetchData = async () => {
-    const response = await axiosInstance.get<T>(pagePath + '?format=json');
+    const response = await axiosInstance.get<T>(pagePath);
 
     return response.data;
   };
 
-  const { data, error, isLoading, refetch } = useQuery({
+  const { data, isError, isLoading, refetch } = useQuery({
     queryKey: [pagePath],
     queryFn: fetchData,
-    staleTime: Infinity,
   });
 
-  return { data, error, isLoading, refetch };
+  return { data, isError, isLoading, refetch };
 };
