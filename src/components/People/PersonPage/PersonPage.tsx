@@ -4,10 +4,17 @@ import { Person } from '../../../types/Person';
 import { useLocation } from 'react-router-dom';
 import { RelatedLinks } from '../../RelatedLinks/RelatedLinks';
 import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
+import { Planet } from '../../../types/Planet';
 
 export const PersonPage = () => {
   const { pathname } = useLocation();
   const { data, isLoading, isError, refetch } = useFetchData<Person>(pathname);
+  const {
+    data: homeworld,
+    isLoading: isLoadingHomeworld,
+    isError: isErrorHomeworld,
+    refetch: refetchHomeworld,
+  } = useFetchData<Planet>(data?.homeworld);
 
   return (
     <>
@@ -25,7 +32,16 @@ export const PersonPage = () => {
         </div>
       )}
 
-      {isLoading ? <div>Loading...</div> : <div>Name: {data?.name}</div>}
+  {
+    isLoading ? (
+      <div>Loading...</div>
+    ) : (
+      <div>
+        <span>Name: {data?.name}</span>
+        <span>Home planet: {homeworld?.name || 'Loading...'}</span>
+      </div>
+    );
+  }
 
       <RelatedLinks urls={data?.films} linkType={RelatedLinksOptions.Film} />
       <RelatedLinks

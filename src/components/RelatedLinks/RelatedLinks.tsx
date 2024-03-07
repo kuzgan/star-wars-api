@@ -2,7 +2,8 @@ import React from 'react';
 import { useFetchListOfUrls } from '../../hooks/useFetchListOfUrls';
 import { RelatedLinksOptions } from '../../types/RelatedLinksOptions';
 
-interface CommonProperties {
+
+interface NameProperties {
   name?: string;
   title?: string;
 }
@@ -45,7 +46,7 @@ export const RelatedLinks: React.FC<RelatedLinksProps> = ({
 
       {responseData?.length === 0 && <p>There are no {info}</p>}
 
-      {responseData?.map((element: CommonProperties) => (
+      {responseData?.map((element: NameProperties) => (
         <div key={element.name || element.title}>
           {element.name || element.title}
         </div>
