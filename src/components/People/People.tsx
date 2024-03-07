@@ -6,10 +6,10 @@ import { Link, useLocation } from 'react-router-dom';
 
 export const People = () => {
   const { pathname } = useLocation();
-  const { data, isLoading, error, refetch } =
+  const { data, isLoading, isError, refetch } =
     useFetchData<ListOf<Person>>(pathname);
 
-  if (error) {
+  if (isError) {
     return (
       <div>
         Error

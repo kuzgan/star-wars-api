@@ -8,10 +8,9 @@ export const useFetchData = <T>(pagePath: string | undefined) => {
     return response.data;
   };
 
-  const { data, error, isLoading, refetch } = useQuery({
+  const { data, isError, isLoading, refetch } = useQuery({
     queryKey: [pagePath],
     queryFn: fetchData,
-    staleTime: Infinity,
   });
 
   if (!pagePath) {
@@ -22,6 +21,5 @@ export const useFetchData = <T>(pagePath: string | undefined) => {
       refetch: () => {},
     };
   }
-
   return { data, isError, isLoading, refetch };
 };

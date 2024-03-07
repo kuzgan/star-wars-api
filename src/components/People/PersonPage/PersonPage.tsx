@@ -16,21 +16,21 @@ export const PersonPage = () => {
     refetch: refetchHomeworld,
   } = useFetchData<Planet>(data?.homeworld);
 
-  if (error) {
-    return (
-      <div>
-        Error
-        <button
-          onClick={() => {
-            refetch();
-          }}
-          type="button"
-        >
-          Try again
-        </button>
-      </div>
-    );
-  }
+  return (
+    <>
+      {isError && (
+        <div>
+          Error
+          <button
+            onClick={() => {
+              refetch();
+            }}
+            type="button"
+          >
+            Try again
+          </button>
+        </div>
+      )}
 
   {
     isLoading ? (
@@ -43,5 +43,15 @@ export const PersonPage = () => {
     );
   }
 
-  return <div>Name: {data?.name}</div>;
+      <RelatedLinks urls={data?.films} linkType={RelatedLinksOptions.Film} />
+      <RelatedLinks
+        urls={data?.vehicles}
+        linkType={RelatedLinksOptions.Vehicles}
+      />
+      <RelatedLinks
+        urls={data?.starships}
+        linkType={RelatedLinksOptions.Starships}
+      />
+    </>
+  );
 };
