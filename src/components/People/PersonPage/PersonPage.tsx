@@ -32,16 +32,14 @@ export const PersonPage = () => {
         </div>
       )}
 
-  {
-    isLoading ? (
-      <div>Loading...</div>
-    ) : (
-      <div>
-        <span>Name: {data?.name}</span>
-        <span>Home planet: {homeworld?.name || 'Loading...'}</span>
-      </div>
-    );
-  }
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div>
+          <span>Name: {data?.name}</span>
+          <span>Home planet: {homeworld?.name || 'Loading...'}</span>
+        </div>
+      )}
 
       <RelatedLinks urls={data?.films} linkType={RelatedLinksOptions.Film} />
       <RelatedLinks
