@@ -1,10 +1,12 @@
 import React from 'react';
 import { useFetchData } from '../../../hooks/useFetchData';
 import { Person } from '../../../types/Person';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { RelatedLinks } from '../../RelatedLinks/RelatedLinks';
 import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
 import { Planet } from '../../../types/Planet';
+import { apiUrl } from '../../../api/apiUrl';
+import { Loader } from '../../Loader/Loader';
 
 export const PersonPage = () => {
   const { pathname } = useLocation();
@@ -15,6 +17,12 @@ export const PersonPage = () => {
     isError: isErrorHomeworld,
     refetch: refetchHomeworld,
   } = useFetchData<Planet>(data?.homeworld);
+  const {
+    data: species,
+    isLoading: isLoadingSpecies,
+    isError: isErrorSpecies,
+    refetch: refetchSpecies,
+  } = useFetchData<Planet>(data?.species[0]);
 
   return (
     <>
@@ -37,7 +45,24 @@ export const PersonPage = () => {
       ) : (
         <div>
           <span>Name: {data?.name}</span>
-          <span>Home planet: {homeworld?.name || 'Loading...'}</span>
+          <span>
+            Home planet:
+            {homeworld?.name ? (
+              <Link to={homeworld.url.replace(apiUrl, '')}>
+                {homeworld.name}
+              </Link>
+            ) : (
+              <Loader />
+            )}
+          </span>
+          <span>
+            Species:
+            {species?.name ? (
+              <Link to={species.url.replace(apiUrl, '')}>{species.name}</Link>
+            ) : (
+              <Loader />
+            )}
+          </span>
         </div>
       )}
 
