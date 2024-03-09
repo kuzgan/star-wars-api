@@ -3,6 +3,7 @@ import { useFetchData } from '../../hooks/useFetchData';
 import { ListOf } from '../../types/ListOf';
 import { Person } from '../../types/Person';
 import { Link, useLocation } from 'react-router-dom';
+import { apiUrl } from '../../api/apiUrl';
 
 export const People = () => {
   const { pathname } = useLocation();
@@ -33,10 +34,7 @@ export const People = () => {
     <div>
       {data?.results?.map((person) => {
         return (
-          <Link
-            to={person.url.replace('https://swapi.dev/api', '')}
-            key={person.url}
-          >
+          <Link to={person.url.replace(apiUrl, '')} key={person.url}>
             {person.name}
           </Link>
         );
