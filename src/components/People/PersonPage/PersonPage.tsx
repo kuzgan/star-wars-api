@@ -49,7 +49,7 @@ export const PersonPage = () => {
             src={`/images/characters/${id}.jpg`}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;
-              currentTarget.src = '/images/characters/1.jpg';
+              currentTarget.src = '/images/big-placeholder.jpg';
             }}
           />
           <span>Name: {data?.name}</span>
