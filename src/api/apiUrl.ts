@@ -1,1 +1,1 @@
-export const apiUrl = 'https://swapi-api.alx-tools.com/api';
+export const apiUrl = 'https://swapi.dev/api/';
