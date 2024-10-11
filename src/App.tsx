@@ -9,7 +9,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <Link to="/home">People page</Link>
+        <Link to="/home">Home</Link>
         <AppRouter />
       </div>
     </QueryClientProvider>
