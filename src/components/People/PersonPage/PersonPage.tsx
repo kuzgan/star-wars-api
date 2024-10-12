@@ -55,7 +55,8 @@ export const PersonPage = () => {
           <span>Name: {data?.name}</span>
           <span>
             Home planet:
-            {homeworld?.name ? (
+            { !data?.homeworld ? 'Unkown'
+            : homeworld?.name ? (
               <Link to={homeworld.url.replace(apiUrl, '')}>
                 {homeworld.name}
               </Link>
@@ -65,11 +66,12 @@ export const PersonPage = () => {
           </span>
           <span>
             Species:
-            {species?.name ? (
+            {  !data?.species?.length ? 'Unkown'
+            : species?.name ? (
               <Link to={species.url.replace(apiUrl, '')}>{species.name}</Link>
             ) : (
               <Loader />
-            )}
+            ) }
           </span>
         </div>
       )}
