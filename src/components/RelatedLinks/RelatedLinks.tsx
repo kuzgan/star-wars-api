@@ -44,7 +44,7 @@ export const RelatedLinks: React.FC<RelatedLinksProps> = ({
 
       {isLoading && <div>Loading...</div>}
 
-      {responseData?.length === 0 && <p>There are no {info}</p>}
+      {responseData?.length && <p>There are no {info}</p>}
 
       {responseData?.map((element: NameProperties) => (
         <div key={element.name || element.title}>
