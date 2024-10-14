@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AppRouter } from './components/AppRouter';
+import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
 
 function App() {
   const queryClient = new QueryClient();
@@ -9,7 +10,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <Link to="/home">Home</Link>
+        <Breadcrumbs />
         <AppRouter />
       </div>
     </QueryClientProvider>
