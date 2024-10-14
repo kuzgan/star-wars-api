@@ -21,6 +21,7 @@
   "rules": {
     "semi": "error",
     "no-console": "warn",
+    "newline-before-return": "error",
     "@typescript-eslint/no-unused-vars": "warn",
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": "off"
