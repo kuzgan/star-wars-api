@@ -7,7 +7,7 @@ interface BreadcrumbsProps {
   next?: string;
 }
 
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ previous, next }) => {
+export const Breadcrumbs: React.FC<BreadcrumbsProps> = () => {
   const location = useLocation();
   const crumbs = location.pathname.split('/').filter((crumb) => crumb !== '');
 
@@ -19,8 +19,6 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ previous, next }) => {
       {crumbs.length === 2 && <Link to={`/${crumbs[0]}`}>{crumbs[0]}</Link>}
       {crumbs.length === 2 && <span>/</span>}
       {crumbs.length === 2 && <span>{crumbs[1]}</span>}
-      {/* <Link to={previous.replace(apiUrl, '')}>{'<'}</Link>
-      <Link to={next.replace(apiUrl, '')}>{'>'}</Link> */}
     </nav>
   );
 };
