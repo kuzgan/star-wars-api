@@ -21,5 +21,6 @@ export const useFetchData = <T>(pagePath: string | undefined) => {
       refetch: () => {},
     };
   }
+
   return { data, isError, isLoading, refetch };
 };

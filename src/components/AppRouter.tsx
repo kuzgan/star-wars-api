@@ -9,6 +9,7 @@ export const AppRouter = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/home" element={<Navigate to="/" replace={true} />} />
+      <Route path="*" element={<Navigate to="/" replace={true} />} />
       <Route path="/people" element={<People />} />
       <Route path="/people/:id" element={<PersonPage />} />
       <Route path="/vehicles" element={<People />} />
@@ -21,7 +22,6 @@ export const AppRouter = () => {
       <Route path="/planets/:id" element={<People />} />
       <Route path="/films" element={<People />} />
       <Route path="/films/:id" element={<People />} />
-      <Route path="*" element={<People />} />
     </Routes>
   );
 };
