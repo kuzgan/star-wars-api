@@ -32,10 +32,10 @@ export const Films = () => {
 
   return (
     <div>
-      {data?.results?.map((person) => {
+      {data?.results?.map((film) => {
         return (
-          <Link to={person.url.replace(apiUrl, '')} key={person.url}>
-            {person.title}
+          <Link to={film.url.replace(apiUrl, '')} key={film.url}>
+            {film.title}
           </Link>
         );
       })}

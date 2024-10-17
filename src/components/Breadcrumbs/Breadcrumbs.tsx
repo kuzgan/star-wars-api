@@ -1,5 +1,4 @@
 import React from 'react';
-import { apiUrl } from '../../api/apiUrl';
 import { Link, useLocation } from 'react-router-dom';
 
 interface BreadcrumbsProps {
