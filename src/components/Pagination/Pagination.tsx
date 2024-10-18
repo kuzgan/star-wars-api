@@ -36,7 +36,7 @@ export const Pagination: React.FC<PaginationParams> = ({
     <div>
       <button
         onClick={previousPage}
-        disabled={searchParams.get('page') === '1'}
+        disabled={searchParams.get('page') === '1' || previous === null}
       >
         {'<'}
       </button>
@@ -44,7 +44,8 @@ export const Pagination: React.FC<PaginationParams> = ({
         onClick={nextPage}
         disabled={
           count === undefined ||
-          searchParams.get('page') === String(Math.ceil(count / 10))
+          searchParams.get('page') === String(Math.ceil(count / 10)) ||
+          next === null
         }
       >
         {'>'}
