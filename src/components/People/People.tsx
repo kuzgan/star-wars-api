@@ -19,13 +19,13 @@ export const People = () => {
     pathname + search
   );
 
-  useEffect(() => {
-    if (!searchParams.has('page')) {
-      searchParams.set('page', '1');
+  // useEffect(() => {
+  //   if (!searchParams.has('page')) {
+  //     searchParams.set('page', '1');
 
-      navigate(pathname + `?${searchParams.toString()}`, { replace: true });
-    }
-  }, [searchParams]);
+  //     navigate(pathname + `?${searchParams.toString()}`, { replace: true });
+  //   }
+  // });
 
   if (isError) {
     return (
@@ -50,22 +50,26 @@ export const People = () => {
   return (
     <>
       <div>
-        {data?.results?.map((person) => {
-          return (
-            <Link to={person.url.replace(apiUrl, '')} key={person.url}>
-              {person.name}
-            </Link>
-          );
-        })}
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <div>
+            {data?.results?.map((person) => {
+              return (
+                <Link to={person.url.replace(apiUrl, '')} key={person.url}>
+                  {person.name}
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </div>
 
-      {data && (
-        <Pagination
-          count={data?.count}
-          next={data?.next}
-          previous={data?.previous}
-        />
-      )}
+      <Pagination
+        count={data?.count}
+        next={data?.next || null}
+        previous={data?.previous || null}
+      />
     </>
   );
 };
