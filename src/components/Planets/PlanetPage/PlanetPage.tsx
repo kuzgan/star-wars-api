@@ -7,7 +7,7 @@ import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
 import { apiUrl } from '../../../api/apiUrl';
 import { Loader } from '../../Loader/Loader';
 
-export const PersonPage = () => {
+export const PlanetPage = () => {
   const { id } = useParams();
   const { pathname } = useLocation();
   const { data, isLoading, isError, refetch } = useFetchData<Planet>(pathname);
