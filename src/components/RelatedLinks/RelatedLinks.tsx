@@ -1,11 +1,13 @@
 import React from 'react';
 import { useFetchListOfUrls } from '../../hooks/useFetchListOfUrls';
 import { RelatedLinksOptions } from '../../types/RelatedLinksOptions';
-
+import { Link } from 'react-router-dom';
+import { apiUrl } from '../../api/apiUrl';
 
 interface NameProperties {
   name?: string;
   title?: string;
+  url: string;
 }
 
 interface RelatedLinksProps {
@@ -47,9 +49,12 @@ export const RelatedLinks: React.FC<RelatedLinksProps> = ({
       {responseData?.length === 0 && <p>There are no {info}</p>}
 
       {responseData?.map((element: NameProperties) => (
-        <div key={element.name || element.title}>
+        <Link
+          to={element.url.replace(apiUrl, '')}
+          key={element.name || element.title}
+        >
           {element.name || element.title}
-        </div>
+        </Link>
       ))}
     </div>
   );
