@@ -32,10 +32,10 @@ export const Planets = () => {
 
   return (
     <div>
-      {data?.results?.map((person) => {
+      {data?.results?.map((planet) => {
         return (
-          <Link to={person.url.replace(apiUrl, '')} key={person.url}>
-            {person.name}
+          <Link to={planet.url.replace(apiUrl, '')} key={planet.url}>
+            {planet.name}
           </Link>
         );
       })}

@@ -7,6 +7,7 @@ import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
 import { Planet } from '../../../types/Planet';
 import { apiUrl } from '../../../api/apiUrl';
 import { Loader } from '../../Loader/Loader';
+import { Species } from '../../../types/Species';
 
 export const PersonPage = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ export const PersonPage = () => {
     isLoading: isLoadingSpecies,
     isError: isErrorSpecies,
     refetch: refetchSpecies,
-  } = useFetchData<Planet>(data?.species[0]);
+  } = useFetchData<Species>(data?.species[0]);
 
   return (
     <>
@@ -55,8 +56,9 @@ export const PersonPage = () => {
           <span>Name: {data?.name}</span>
           <span>
             Home planet:
-            { !data?.homeworld ? 'Unkown'
-            : homeworld?.name ? (
+            {!data?.homeworld ? (
+              'Unkown'
+            ) : homeworld?.name ? (
               <Link to={homeworld.url.replace(apiUrl, '')}>
                 {homeworld.name}
               </Link>
@@ -66,12 +68,13 @@ export const PersonPage = () => {
           </span>
           <span>
             Species:
-            {  !data?.species?.length ? 'Unkown'
-            : species?.name ? (
+            {!data?.species?.length ? (
+              'Unkown'
+            ) : species?.name ? (
               <Link to={species.url.replace(apiUrl, '')}>{species.name}</Link>
             ) : (
               <Loader />
-            ) }
+            )}
           </span>
         </div>
       )}
