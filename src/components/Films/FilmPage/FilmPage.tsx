@@ -31,7 +31,7 @@ export const FilmPage = () => {
       ) : (
         <div>
           <img
-            src={`/images/characters/${id}.jpg`}
+            src={`/images/films/${id}.jpg`}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;
               currentTarget.src = '/images/big-placeholder.jpg';
@@ -46,12 +46,20 @@ export const FilmPage = () => {
         linkType={RelatedLinksOptions.Characters}
       />
       <RelatedLinks
-        urls={data?.vehicles}
-        linkType={RelatedLinksOptions.Vehicles}
+        urls={data?.planets}
+        linkType={RelatedLinksOptions.Planets}
       />
       <RelatedLinks
         urls={data?.starships}
         linkType={RelatedLinksOptions.Starships}
+      />
+      <RelatedLinks
+        urls={data?.vehicles}
+        linkType={RelatedLinksOptions.Vehicles}
+      />
+      <RelatedLinks
+        urls={data?.species}
+        linkType={RelatedLinksOptions.Species}
       />
     </>
   );
