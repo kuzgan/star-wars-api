@@ -11,6 +11,8 @@ import { Planets } from './Planets/Planets';
 import { PlanetPage } from './Planets/PlanetPage/PlanetPage';
 import { Films } from './Films/Films';
 import { FilmPage } from './Films/FilmPage/FilmPage';
+import { Species } from './Species/Species';
+import { SpeciesPage } from './Species/SpeciesPage/SpeciesPage';
 
 export const AppRouter = () => {
   return (
@@ -24,8 +26,8 @@ export const AppRouter = () => {
       <Route path="/vehicles/:id" element={<VehiclePage />} />
       <Route path="/starships" element={<Starships />} />
       <Route path="/starships/:id" element={<StarshipPage />} />
-      <Route path="/species" element={<People />} /> {/* needs to be change */}
-      <Route path="/species/:id" element={<People />} />
+      <Route path="/species" element={<Species />} />
+      <Route path="/species/:id" element={<SpeciesPage />} />
       <Route path="/planets" element={<Planets />} />
       <Route path="/planets/:id" element={<PlanetPage />} />
       <Route path="/films" element={<Films />} />
