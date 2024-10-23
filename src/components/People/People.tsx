@@ -1,31 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useFetchData } from '../../hooks/useFetchData';
 import { ListOf } from '../../types/ListOf';
 import { Person } from '../../types/Person';
-import {
-  Link,
-  useLocation,
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { apiUrl } from '../../api/apiUrl';
 import { Pagination } from '../Pagination/Pagination';
 
 export const People = () => {
   const { pathname, search } = useLocation();
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
   const { data, isLoading, isError, refetch } = useFetchData<ListOf<Person>>(
     pathname + search
   );
-
-  // useEffect(() => {
-  //   if (!searchParams.has('page')) {
-  //     searchParams.set('page', '1');
-
-  //     navigate(pathname + `?${searchParams.toString()}`, { replace: true });
-  //   }
-  // });
 
   if (isError) {
     return (
