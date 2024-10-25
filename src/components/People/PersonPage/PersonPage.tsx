@@ -7,7 +7,7 @@ import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
 import { Planet } from '../../../types/Planet';
 import { apiUrl } from '../../../api/apiUrl';
 import { Loader } from '../../Loader/Loader';
-import { Species } from '../../../types/Species';
+import { SpeciesType } from '../../../types/Species';
 
 export const PersonPage = () => {
   const { id } = useParams();
@@ -24,7 +24,7 @@ export const PersonPage = () => {
     isLoading: isLoadingSpecies,
     isError: isErrorSpecies,
     refetch: refetchSpecies,
-  } = useFetchData<Species>(data?.species[0]);
+  } = useFetchData<SpeciesType>(data?.species[0]);
 
   return (
     <>
