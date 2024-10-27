@@ -32,7 +32,7 @@ export const StarshipPage = () => {
       ) : (
         <div>
           <img
-            src={`/images/characters/${id}.jpg`}
+            src={`/images/starships/${id}.jpg`}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;
               currentTarget.src = '/images/big-placeholder.jpg';
