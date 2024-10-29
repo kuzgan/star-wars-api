@@ -1,11 +1,9 @@
 import React from 'react';
 import { useFetchData } from '../../../hooks/useFetchData';
 import { Planet } from '../../../types/Planet';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { RelatedLinks } from '../../RelatedLinks/RelatedLinks';
 import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
-import { apiUrl } from '../../../api/apiUrl';
-import { Loader } from '../../Loader/Loader';
 
 export const PlanetPage = () => {
   const { id } = useParams();
