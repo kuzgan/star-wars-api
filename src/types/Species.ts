@@ -1,6 +1,6 @@
 import { CommonMixin } from './CommonMixin';
 
-export interface Species extends CommonMixin {
+export interface SpeciesType extends CommonMixin {
   name: string;
   classification: string;
   designation: string;
