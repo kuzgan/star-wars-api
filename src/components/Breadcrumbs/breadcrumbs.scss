@@ -1,40 +1,33 @@
-@use '../../sass/style' as *;
+@use '../../sass/main' as *;
 
 .breadcrumbs {
-  font-size: $font-size-medium;
+  font-size: $font-size-regular;
   font-weight: $font-weight-light;
   font-family: $font-family;
   color: $font-color;
 
   &__item {
-    display: inline-block;
-    position: relative;
+    padding: 0 0.5em 0 0.5em;
 
-    &:not(:first-child) {
-      padding-left: 0.5rem;
+    &:first-child {
+      padding-left: 0;
     }
-
-    &:not(:last-child)::after {
-      content: '/';
-      pointer-events: none;
-      color: $font-color;
+    &:last-child {
+      padding-right: 0;
     }
   }
+
+  &__separator {
+    cursor: default;
+  }
+
   &__link {
-    display: inline-block;
-    position: relative;
     text-decoration: none;
     color: $font-color;
+    padding: 0 0.5em 0 0.5em;
 
-    &:not(:first-child) {
-      padding-left: 0.5rem;
-    }
-
-    &:not(:last-child)::after {
-      content: '/';
-      pointer-events: none;
-      color: $font-color;
-      padding-left: 0.5rem;
+    &:first-child {
+      padding-left: 0;
     }
 
     &:hover {

@@ -20,15 +20,17 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = () => {
           home
         </Link>
       )}
-      {/* {crumbs.length > 0 && <span>/</span>} */}
+      {crumbs.length > 0 && <span className="breadcrumbs__separator">/</span>}
       {crumbs.length === 1 && <span>{crumbs[0]}</span>}
       {crumbs.length === 2 && (
         <Link to={`/${crumbs[0]}`} className="breadcrumbs__link">
           {crumbs[0]}
         </Link>
       )}
-      {/* {crumbs.length === 2 && <span>/</span>} */}
-      {crumbs.length === 2 && <span>{crumbs[1]}</span>}
+      {crumbs.length === 2 && <span className="breadcrumbs__separator">/</span>}
+      {crumbs.length === 2 && (
+        <span className="breadcrumbs__item">{crumbs[1]}</span>
+      )}
     </nav>
   );
 };
