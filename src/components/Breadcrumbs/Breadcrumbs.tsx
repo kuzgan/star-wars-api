@@ -10,6 +10,7 @@ interface BreadcrumbsProps {
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = () => {
   const location = useLocation();
   const crumbs = location.pathname.split('/').filter((crumb) => crumb !== '');
+  const [listName, PageName] = crumbs;
 
   return (
     <nav className="breadcrumbs">
@@ -21,15 +22,15 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = () => {
         </Link>
       )}
       {crumbs.length > 0 && <span className="breadcrumbs__separator">/</span>}
-      {crumbs.length === 1 && <span>{crumbs[0]}</span>}
+      {crumbs.length === 1 && <span>{listName}</span>}
       {crumbs.length === 2 && (
-        <Link to={`/${crumbs[0]}`} className="breadcrumbs__link">
-          {crumbs[0]}
+        <Link to={`/${listName}`} className="breadcrumbs__link">
+          {listName}
         </Link>
       )}
       {crumbs.length === 2 && <span className="breadcrumbs__separator">/</span>}
       {crumbs.length === 2 && (
-        <span className="breadcrumbs__item">{crumbs[1]}</span>
+        <span className="breadcrumbs__item">{PageName}</span>
       )}
     </nav>
   );
