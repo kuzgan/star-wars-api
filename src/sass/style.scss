@@ -1,2 +1,7 @@
 @use 'abstracts' as *;
-@use 'base';
+@use 'base' as *;
+
+body {
+  font-family: $font-family;
+  min-height: 100dvh;
+}
