@@ -1,0 +1,37 @@
+@use '../../sass/main' as *;
+
+.breadcrumbs {
+  font-size: $font-size-regular;
+  font-weight: $font-weight-light;
+  font-family: $font-family;
+  color: $font-color;
+
+  &__item {
+    padding: 0 0.5em 0 0.5em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__separator {
+    cursor: default;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $font-color;
+    padding: 0 0.5em 0 0.5em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: $color-main-font;
+    }
+  }
+}

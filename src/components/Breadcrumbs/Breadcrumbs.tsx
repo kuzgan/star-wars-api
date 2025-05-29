@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import './breadcrumbs.scss';
 
 interface BreadcrumbsProps {
   previous?: string;
@@ -12,13 +13,25 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = () => {
   const [listName, PageName] = crumbs;
 
   return (
-    <nav>
-      {crumbs.length === 0 ? <span>home</span> : <Link to="/">home</Link>}
-      {crumbs.length > 0 && <span>/</span>}
+    <nav className="breadcrumbs">
+      {crumbs.length === 0 ? (
+        <span className="breadcrumbs__item">home</span>
+      ) : (
+        <Link to="/" className="breadcrumbs__link">
+          home
+        </Link>
+      )}
+      {crumbs.length > 0 && <span className="breadcrumbs__separator">/</span>}
       {crumbs.length === 1 && <span>{listName}</span>}
-      {crumbs.length === 2 && <Link to={`/${listName}`}>{listName}</Link>}
-      {crumbs.length === 2 && <span>/</span>}
-      {crumbs.length === 2 && <span>{PageName}</span>}
+      {crumbs.length === 2 && (
+        <Link to={`/${listName}`} className="breadcrumbs__link">
+          {listName}
+        </Link>
+      )}
+      {crumbs.length === 2 && <span className="breadcrumbs__separator">/</span>}
+      {crumbs.length === 2 && (
+        <span className="breadcrumbs__item">{PageName}</span>
+      )}
     </nav>
   );
 };
