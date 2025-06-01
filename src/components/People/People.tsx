@@ -5,6 +5,7 @@ import { Person } from '../../types/Person';
 import { Link, useLocation } from 'react-router-dom';
 import { apiUrl } from '../../api/apiUrl';
 import { Pagination } from '../Pagination/Pagination';
+import './people.scss';
 
 export const People = () => {
   const { pathname, search } = useLocation();
@@ -14,7 +15,7 @@ export const People = () => {
 
   if (isError) {
     return (
-      <div>
+      <div className="people">
         Error
         <button
           onClick={() => {
@@ -29,11 +30,11 @@ export const People = () => {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="people">Loading...</div>;
   }
 
   return (
-    <>
+    <div className="people">
       <div>
         {isLoading ? (
           <div>Loading...</div>
@@ -55,6 +56,6 @@ export const People = () => {
         next={data?.next || null}
         previous={data?.previous || null}
       />
-    </>
+    </div>
   );
 };
