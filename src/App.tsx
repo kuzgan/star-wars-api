@@ -11,9 +11,13 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="app">
-        <Breadcrumbs />
-        <AppRouter />
+      <div>
+        {/* <Header/> */}
+        <main className="app">
+          <Breadcrumbs />
+          <AppRouter />
+        </main>
+        {/* <Footer/> */}
       </div>
     </QueryClientProvider>
   );
