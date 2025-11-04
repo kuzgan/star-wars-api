@@ -1,0 +1,43 @@
+@use '../../sass/main.scss' as *;
+
+.home {
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(2, 200px);
+  gap: 1em;
+
+  padding: 20px 0 20px 0;
+  &__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__img {
+    position: absolute;
+  }
+
+  &__title {
+    font-size: $font-size-extra-large;
+    font-weight: $font-weight-bold;
+    color: $color-main-font;
+    z-index: 1;
+    text-shadow:
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      2px 2px 0 #000,
+      -3px 0px 0 #000,
+      3px 0px 0 #000,
+      0px -3px 0 #000,
+      0px 3px 0 #000;
+  }
+}
