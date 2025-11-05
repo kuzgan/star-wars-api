@@ -5,7 +5,7 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { RelatedLinks } from '../../RelatedLinks/RelatedLinks';
 import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
 import { apiUrl } from '../../../api/apiUrl';
-import { Loader } from '../../Loader/Loader';
+import { Loader } from '../../Common/Loader/Loader';
 
 export const VehiclePage = () => {
   const { id } = useParams();

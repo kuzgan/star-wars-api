@@ -5,7 +5,7 @@ import { RelatedLinks } from '../../RelatedLinks/RelatedLinks';
 import { RelatedLinksOptions } from '../../../types/RelatedLinksOptions';
 import { Planet } from '../../../types/Planet';
 import { apiUrl } from '../../../api/apiUrl';
-import { Loader } from '../../Loader/Loader';
+import { Loader } from '../../Common/Loader/Loader';
 import { SpeciesType } from '../../../types/Species';
 
 export const SpeciesPage = () => {
