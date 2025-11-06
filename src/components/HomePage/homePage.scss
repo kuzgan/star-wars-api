@@ -9,7 +9,12 @@
   gap: 1em;
 
   padding: 20px 0 20px 0;
+
   &__button {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     position: relative;
     display: flex;
     align-items: center;
@@ -21,11 +26,8 @@
     }
   }
 
-  &__img {
-    position: absolute;
-  }
-
   &__title {
+    text-transform: capitalize;
     font-size: $font-size-extra-large;
     font-weight: $font-weight-bold;
     color: $color-main-font;
