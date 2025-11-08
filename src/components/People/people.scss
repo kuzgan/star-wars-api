@@ -1,5 +1,10 @@
 @use '../../sass/main.scss' as *;
 
-.people {
-  background-color: $color-main-font;
+.people__list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 250px);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1em;
+  padding: 1em 0 1em 0;
 }
