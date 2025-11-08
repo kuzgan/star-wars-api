@@ -2,10 +2,11 @@ import React from 'react';
 import { useFetchData } from '../../hooks/useFetchData';
 import { ListOf } from '../../types/ListOf';
 import { Person } from '../../types/Person';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { apiUrl } from '../../api/apiUrl';
 import { Pagination } from '../Pagination/Pagination';
 import './people.scss';
+import { Tile } from '../Common/Tile/Tile';
 
 export const People = () => {
   const { pathname, search } = useLocation();
@@ -39,15 +40,17 @@ export const People = () => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          <div>
+          <ul className="people__list">
             {data?.results?.map((person) => {
               return (
-                <Link to={person.url.replace(apiUrl, '')} key={person.url}>
-                  {person.name}
-                </Link>
+                <Tile
+                  name={person.name}
+                  link={person.url.replace(apiUrl, '')}
+                  key={person.url}
+                />
               );
             })}
-          </div>
+          </ul>
         )}
       </div>
 
