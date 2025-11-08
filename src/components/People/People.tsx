@@ -40,7 +40,7 @@ export const People = () => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          <div>
+          <ul className="people__list">
             {data?.results?.map((person) => {
               return (
                 <Tile
@@ -50,7 +50,7 @@ export const People = () => {
                 />
               );
             })}
-          </div>
+          </ul>
         )}
       </div>
 
