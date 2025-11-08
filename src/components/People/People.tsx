@@ -2,7 +2,7 @@ import React from 'react';
 import { useFetchData } from '../../hooks/useFetchData';
 import { ListOf } from '../../types/ListOf';
 import { Person } from '../../types/Person';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { apiUrl } from '../../api/apiUrl';
 import { Pagination } from '../Pagination/Pagination';
 import './people.scss';
