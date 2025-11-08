@@ -47,7 +47,7 @@ export const PersonPage = () => {
       ) : (
         <div>
           <img
-            src={`/images/characters/${id}.jpg`}
+            src={`/images/people/${id}.jpg`}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;
               currentTarget.src = '/images/big-placeholder.jpg';
