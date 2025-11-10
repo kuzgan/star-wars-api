@@ -8,12 +8,10 @@ interface TileProps {
 }
 
 export const Tile: React.FC<TileProps> = ({ name, link }) => {
-  //console.log(link);
   const linkTrimmed = link
     .split('/')
     .filter((e) => e != '')
     .join('/');
-  //console.log(linkTrimmed);
 
   return (
     <Link className="tile" to={link}>
