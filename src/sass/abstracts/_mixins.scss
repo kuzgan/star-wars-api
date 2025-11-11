@@ -1,0 +1,13 @@
+@use 'colors';
+
+@mixin text-borders($size: 2px, $color: colors.$font-color) {
+  text-shadow:
+    (-$size) (-$size) 0 $color,
+    $size (-$size) 0 $color,
+    (-$size) $size 0 $color,
+    $size $size 0 $color,
+    (-1px - $size) 0px 0 $color,
+    (1px + $size) 0px 0 $color,
+    0px (-1px - $size) 0 $color,
+    0px (1px + $size) 0 $color;
+}
