@@ -18,7 +18,7 @@ export const HomePage = () => {
         return (
           <Link
             key={category}
-            className="home__button"
+            className="home__link"
             to={`/${category}/?page=1`}
             style={{
               backgroundImage: `url("http://localhost:3000/images/categories/${category}.jpg")`,
