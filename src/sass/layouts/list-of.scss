@@ -10,6 +10,11 @@
 
   padding: 1em 0 1em 0;
 
+  &--characters {
+    grid-template-columns: repeat(5, 250px);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
   &__button {
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,6 +37,10 @@
     font-weight: $font-weight-bold;
     color: $color-main-font;
     z-index: 1;
-    @include text-borders;
+    @include text-borders(0px);
+
+    &--big {
+      @include text-borders;
+    }
   }
 }
