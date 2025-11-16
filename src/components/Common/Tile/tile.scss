@@ -2,6 +2,11 @@
 
 .tile {
   position: relative;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 
   &__img {
     width: 100%;
@@ -23,5 +28,11 @@
     font-weight: $font-weight-medium;
     color: $color-main-font;
     @include text-borders(0px);
+
+    &--big {
+      font-size: $font-size-extra-large;
+      font-weight: $font-weight-bold;
+      @include text-borders;
+    }
   }
 }
