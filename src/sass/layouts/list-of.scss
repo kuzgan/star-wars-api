@@ -1,6 +1,7 @@
 @use '../main.scss' as *;
 
 .list-of {
+  position: relative;
   display: grid;
   justify-content: center;
 
@@ -13,34 +14,5 @@
   &--characters {
     grid-template-columns: repeat(5, 250px);
     grid-template-rows: repeat(2, 1fr);
-  }
-
-  &__button {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-  }
-
-  &__title {
-    text-transform: capitalize;
-    font-size: $font-size-extra-large;
-    font-weight: $font-weight-bold;
-    color: $color-main-font;
-    z-index: 1;
-    @include text-borders(0px);
-
-    &--big {
-      @include text-borders;
-    }
   }
 }
