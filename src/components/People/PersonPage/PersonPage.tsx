@@ -52,6 +52,7 @@ export const PersonPage = () => {
               currentTarget.onerror = null;
               currentTarget.src = '/images/big-placeholder.jpg';
             }}
+            alt=""
           />
           <span>Name: {data?.name}</span>
           <span>
