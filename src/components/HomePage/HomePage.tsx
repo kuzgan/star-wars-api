@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './homePage.scss';
+import '../../sass/layouts/list-of.scss';
+import { Tile } from '../Common/Tile/Tile';
 
 export const HomePage = () => {
   const categories = [
@@ -16,16 +18,12 @@ export const HomePage = () => {
     <nav className="home">
       {categories.map((category) => {
         return (
-          <Link
+          <Tile
+            name={category}
+            link={`/${category}/?page=1`}
+            pageType="home"
             key={category}
-            className="home__link"
-            to={`/${category}/?page=1`}
-            style={{
-              backgroundImage: `url("http://localhost:3000/images/categories/${category}.jpg")`,
-            }}
-          >
-            <span className="home__title">{category}</span>
-          </Link>
+          />
         );
       })}
     </nav>
