@@ -46,6 +46,7 @@ export const People = () => {
                 <Tile
                   name={person.name}
                   link={person.url.replace(apiUrl, '')}
+                  pageType="people"
                   key={person.url}
                 />
               );
