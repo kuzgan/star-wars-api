@@ -1,6 +1,6 @@
 @use '../main.scss' as *;
 
-.list-of {
+.u-list-of {
   position: relative;
   display: grid;
   justify-content: center;
@@ -12,6 +12,7 @@
   padding: 1em 0 1em 0;
 
   &--characters {
+    @extend .u-list-of;
     grid-template-columns: repeat(5, 250px);
     grid-template-rows: repeat(2, 343.75px);
   }
