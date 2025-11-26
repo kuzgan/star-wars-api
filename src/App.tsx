@@ -5,6 +5,7 @@ import { AppRouter } from './components/AppRouter';
 import { Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs';
 import '../src/sass/layouts/app.scss';
 import '../src/sass/style.scss';
+import { Header } from './components/Header/Header';
 
 function App() {
   const queryClient = new QueryClient();
@@ -12,8 +13,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div>
-        {/* <Header/> */}
-        <main className="app">
+        <Header />
+        <main>
           <Breadcrumbs />
           <AppRouter />
         </main>
