@@ -7,6 +7,7 @@ import { apiUrl } from '../../api/apiUrl';
 import { Pagination } from '../Pagination/Pagination';
 import './people.scss';
 import { Tile } from '../Common/Tile/Tile';
+import '../../sass/layouts/list-of.scss';
 
 export const People = () => {
   const { pathname, search } = useLocation();
@@ -40,7 +41,7 @@ export const People = () => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          <ul className="people__list">
+          <ul className="u-list-of--characters">
             {data?.results?.map((person) => {
               return (
                 <Tile
