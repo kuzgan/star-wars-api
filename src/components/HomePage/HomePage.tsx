@@ -15,7 +15,7 @@ export const HomePage = () => {
   ];
 
   return (
-    <nav className="home">
+    <nav className="u-list-of">
       {categories.map((category) => {
         return (
           <Tile
