@@ -2,6 +2,22 @@
 
 .header {
   display: flex;
-  justify-items: center;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  padding: 0.5em;
+  border-bottom: 4px solid $font-color;
+
+  &__logo {
+    font-family: $font-family-logo;
+    font-size: $font-size-extra-large;
+    color: $color-main-font;
+    @include text-borders;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
