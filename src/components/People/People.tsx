@@ -5,8 +5,8 @@ import { Person } from '../../types/Person';
 import { useLocation } from 'react-router-dom';
 import { apiUrl } from '../../api/apiUrl';
 import { Pagination } from '../Pagination/Pagination';
-import './people.scss';
 import { Tile } from '../Common/Tile/Tile';
+import './people.scss';
 import '../../sass/layouts/list-of.scss';
 
 export const People = () => {
